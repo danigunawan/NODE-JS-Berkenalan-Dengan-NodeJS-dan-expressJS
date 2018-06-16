@@ -1,0 +1,75 @@
+REFF :
+
+https://medium.com/easyread/kenalan-dengan-nodejs-dan-expressjs-e1e8887ad4ad
+
+ada dua cara penginstallan untuk menggunakan expressjs , saya nyebutnya cara manual dan cara automatis: 
+
+### CARA MANUAL ###
+
+1. mkdir express-manual-install 
+2. cd express-manual-install && npm init
+
+# ketika menjalankan npm init , dia akan menanyakan beberapa hal seperti apa nama projectnya, 
+alamat github nya, versi nya , entry point js nya . 
+jawab aja seada nya , kalau enggak di enter terus aja. lalu yes
+
+3. install expressjs nya 
+npm install --save express
+
+4. Sekarang express kita sudah siap dipakai
+
+5. kita akan buat web menampilkan hello world dengan dua route “/” dan “/about”
+
+- buat index.js di path root express-manual-install
+
+lalu save dengan code dibawah ini : 
+
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => res.send('Hello Express!'))
+app.get('/about', (req, res) => res.send('Express is Express'))
+
+app.listen(3000, () => console.log('Hello World app berjalan di http://localhost:3000'))
+
+6. lalu jalankan
+
+node index.js
+
+- buka localhost:3000
+
+### END CARA MANUAL ###
+
+
+### CARA OTOMATIS ###
+
+dari nama nya aja udah ketahuan ya apa fungsinya express generator,
+dengan tools ini kita akan di buat satu paket project express lengkap dengan direktori 
+yang sudah di susun rapi agar kita mudah untuk mengerjakan web dengan express serta depedency 
+package dasar yang sudah terinstall
+
+STEP
+=======
+
+1. install express generator (PASTIKAN PATH NYA BUKAN PADA ROOT PATH EXPRESS JS TAPI PATH YANG AKAN DIJADIKAN TEMPAT CREATE APP EXPRESSJS)
+- cd ke folder berkenalan dengan nodejs dan expressjs
+npm install express-generator -g
+
+2. cek express js generator
+express -h
+
+3. untuk membuat express app baru jalankan command berikut :
+
+express myapp
+
+## command di atas akan membuatkan kita sebuah direktori baru 
+dengan nama myapp yang sudah berisi kode nodejs dan express serta package 
+depedency siap install. pindah ke direktori myapp tadi dan install.
+
+4. cd myapp && npm install
+
+5. jalankan express web app nya dengan command :
+
+npm start
+
+6. lalu buka localhost:3000
